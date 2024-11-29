@@ -21,8 +21,10 @@ def get_orchestrator(custom_key=None):
 @app.route('/api/initialize', methods=['POST'])
 def initialize_api():
     """Initialize with custom API key if provided"""
+    print("Initialize endpoint hit")  # Debug log
     try:
         data = request.get_json()
+        print(f"Received data: {data}")  # Debug log
         custom_key = data.get('groq_key')
         orchestrator = get_orchestrator(custom_key)
         return jsonify({
@@ -30,6 +32,7 @@ def initialize_api():
             'message': 'API initialized successfully'
         })
     except Exception as e:
+        print(f"Initialize error: {str(e)}")  # Debug log
         return jsonify({
             'status': 'error',
             'message': str(e)
@@ -38,9 +41,11 @@ def initialize_api():
 @app.route('/api/search', methods=['POST'])
 def search():
     """Main search endpoint"""
+    print("Search endpoint hit")  # Debug log
     try:
         orchestrator = get_orchestrator()
         data = request.get_json()
+        print(f"Received search data: {data}")  # Debug log
         query = data.get('query')
 
         if not query:
@@ -49,7 +54,9 @@ def search():
                 'message': 'Query is required'
             }), 400
 
+        print(f"Processing query: {query}")  # Debug log
         response = orchestrator.process_query(query)
+        print(f"Got response: {response[:100]}...")  # Debug log
 
         if isinstance(response, str):
             return jsonify({
@@ -63,6 +70,7 @@ def search():
         })
 
     except Exception as e:
+        print(f"Search error: {str(e)}")  # Debug log
         return jsonify({
             'status': 'error',
             'message': str(e)
