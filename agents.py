@@ -1,27 +1,23 @@
-
-# New Cell: Search Configurations
-from typing import Dict, List, Optional, Tuple
-from collections import defaultdict
-
-# Cell 2: Import Libraries
+# Standard library imports
 import os
-from abc import ABC, abstractmethod
+import re
 import json
-from typing import Dict, List, Optional
+import logging
+from abc import ABC, abstractmethod
+from typing import Dict, List, Optional, Tuple
+from datetime import datetime
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import quote_plus
+
+# Third-party imports
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from groq import Groq
 import requests
 from bs4 import BeautifulSoup
-import re
-from datetime import datetime
-from flask import Flask, request, jsonify
-from flask_cors import CORS
 
-
-from urllib.parse import quote_plus
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
-
-# 2. Add Logging Configuration
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
