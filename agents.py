@@ -199,10 +199,27 @@ class ConversationMemory:
     def clear(self):
         self.messages = []
 
+# class BaseAgent(ABC):
+#     """Base class for all agents"""
+#     def __init__(self, groq_api_key: str):
+#         self.llm_client = Groq(api_key=groq_api_key)
+#         self.memory = ConversationMemory()
+
+#     @abstractmethod
+#     def process(self, query: str, **kwargs) -> Dict:
+#         pass
+        
 class BaseAgent(ABC):
     """Base class for all agents"""
     def __init__(self, groq_api_key: str):
-        self.llm_client = Groq(api_key=groq_api_key)
+        print(f"Initializing Groq client with key: {groq_api_key[:8]}...")  # Debug log
+        try:
+            import groq
+            self.llm_client = groq.Groq(api_key=groq_api_key)
+            print("Groq client initialized successfully")
+        except Exception as e:
+            print(f"Groq initialization error: {str(e)}")
+            raise
         self.memory = ConversationMemory()
 
     @abstractmethod
