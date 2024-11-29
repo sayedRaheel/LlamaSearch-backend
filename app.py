@@ -73,7 +73,9 @@ def health_check():
     """Health check endpoint"""
     return jsonify({'status': 'healthy'})
 
+
 if __name__ == "__main__":
-    port = Config.PORT
-    debug = Config.DEBUG
+    # Get port from environment variable first, then fallback to Config
+    port = int(os.environ.get("PORT", Config.PORT))
+    debug = os.environ.get("DEBUG", Config.DEBUG).lower() == 'true'
     app.run(host='0.0.0.0', port=port, debug=debug)
