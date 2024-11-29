@@ -68,6 +68,26 @@ def search():
             'message': str(e)
         }), 500
 
+# @app.route('/health', methods=['GET'])
+# def health_check():
+#     """Health check endpoint"""
+#     return jsonify({'status': 'healthy'})
+
+# Root endpoint (/) for API information
+@app.route('/', methods=['GET'])
+def root():
+    """Root endpoint with API information"""
+    return jsonify({
+        'status': 'online',
+        'version': '1.0',
+        'endpoints': {
+            'health': '/health [GET]',
+            'search': '/api/search [POST]',
+            'initialize': '/api/initialize [POST]'
+        }
+    })
+
+# Keep your existing health check endpoint
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
