@@ -267,7 +267,7 @@ class QueryAnalyzerAgent(BaseAgent):
 
 class ResearchAgent(BaseAgent):
     """Agent for handling academic and research queries"""
-    def __init__(self, groq_api_key: str, serpapi_key: str):
+    def __init__(self, groq_api_key: str, serpapi_key: str=None):
         super().__init__(groq_api_key)
         self.search_engine = DuckDuckGoSearch()
 
