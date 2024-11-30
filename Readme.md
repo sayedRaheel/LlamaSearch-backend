@@ -1,5 +1,3 @@
-# Backend README
-
 # LlamaSearch Backend 🦙
 
 LlamaSearch is an advanced, real-time web and research search tool powered by a multi-agent AI system and Llama 70B model through Groq. It provides natural language search capabilities across both web content and academic research databases.
@@ -76,8 +74,7 @@ The backend is configured for deployment on Render.com using render.yaml configu
 - Orchestrator: Coordinates between agents and manages responses
 
 MIT License
-
-Copyright (c) 2024 LlamaSearch
+a
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
