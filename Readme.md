@@ -4,7 +4,7 @@ LlamaSearch is an advanced, real-time web and research search tool powered by a 
 
 A Flask-based backend service that provides intelligent search capabilities using Groq LLM and web scraping.
 
-function App() {
+
   return (
     <div>
       <img src="/images/llamasearch.png" alt="LlamaSeach" />
