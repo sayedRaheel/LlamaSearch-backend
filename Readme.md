@@ -81,7 +81,8 @@ The backend is configured for deployment on Render.com using render.yaml configu
 - Orchestrator: Coordinates between agents and manages responses
 
 MIT License
-a
+
+Copyright (c) 2024 LlamaSearch
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
