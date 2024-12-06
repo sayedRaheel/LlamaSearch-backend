@@ -1,4 +1,4 @@
-importRenderRead os
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from agents import Orchestrator
@@ -21,7 +21,7 @@ def get_orchestrator(custom_key=None):
 @app.route('/api/initialize', methods=['POST'])
 def initialize_api():
     """Initialize with custom API key if provided"""
-    print("Initialize endpoint hit")  # Debug log
+    print("Initialize endpoint hit")  # Debug logs
     try:
         data = request.get_json()
         print(f"Received data: {data}")  # Debug log
