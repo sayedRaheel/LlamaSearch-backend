@@ -62,7 +62,7 @@ class SearchConfig:
     DOMAIN_CATEGORIES = {
     'academic': ['edu', 'arxiv.org', 'ieee.org', 'researchgate.net', 'sciencedirect.com', 'nature.com', 'scholar.google.com'],
     'tech_major': ['technologyreview.com', 'wired.com', 'techcrunch.com', 'arstechnica.com', 'theverge.com', 'venturebeat.com'],
-    'news': ['reuters.com', 'bloomberg.com', 'forbes.com', 'wsj.com', 'ft.com', 'economist.com', 'nytimes.com'],
+    'news': ['reuters.com', 'bloomberg.com','linkedin', 'forbes.com', 'wsj.com', 'ft.com', 'economist.com', 'nytimes.com'],
     'industry': ['research.google', 'research.microsoft', 'research.facebook.com', 'labs.amazon.com', 'research.ibm.com', 'openai.com'],
     'tech_communities': ['github.com', 'stackoverflow.com', 'medium.com', 'dev.to', 'huggingface.co', 'kaggle.com'],
     'government': ['gov', 'nasa.gov', 'nih.gov', 'nsf.gov', 'europa.eu', 'who.int']
