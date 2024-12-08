@@ -42,7 +42,9 @@ class SearchConfig:
         'bloomberg.com': 0.7,
         'techcrunch.com': 0.6,
         'wired.com': 0.6,
-        'default': 0.3
+        'default': 0.3,
+        'linkedin':0.8,
+        'github': 0.8
     }
 
     # Minimum required sources for diverse responses
@@ -50,11 +52,20 @@ class SearchConfig:
     MAX_SOURCES = 5
 
     # Domain categories for diversity
+    # DOMAIN_CATEGORIES = {
+    #     'academic': ['edu', 'arxiv.org', 'ieee.org'],
+    #     'tech_major': ['technologyreview.com', 'wired.com'],
+    #     'news': ['reuters.com', 'bloomberg.com', 'forbes.com'],
+    #     'industry': ['research.google', 'research.microsoft']
+    # }
+
     DOMAIN_CATEGORIES = {
-        'academic': ['edu', 'arxiv.org', 'ieee.org'],
-        'tech_major': ['technologyreview.com', 'wired.com'],
-        'news': ['reuters.com', 'bloomberg.com', 'forbes.com'],
-        'industry': ['research.google', 'research.microsoft']
+    'academic': ['edu', 'arxiv.org', 'ieee.org', 'researchgate.net', 'sciencedirect.com', 'nature.com', 'scholar.google.com'],
+    'tech_major': ['technologyreview.com', 'wired.com', 'techcrunch.com', 'arstechnica.com', 'theverge.com', 'venturebeat.com'],
+    'news': ['reuters.com', 'bloomberg.com', 'forbes.com', 'wsj.com', 'ft.com', 'economist.com', 'nytimes.com'],
+    'industry': ['research.google', 'research.microsoft', 'research.facebook.com', 'labs.amazon.com', 'research.ibm.com', 'openai.com'],
+    'tech_communities': ['github.com', 'stackoverflow.com', 'medium.com', 'dev.to', 'huggingface.co', 'kaggle.com'],
+    'government': ['gov', 'nasa.gov', 'nih.gov', 'nsf.gov', 'europa.eu', 'who.int']
     }
 
 
